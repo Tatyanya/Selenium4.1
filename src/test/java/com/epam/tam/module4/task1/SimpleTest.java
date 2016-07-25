@@ -16,7 +16,7 @@ public class SimpleTest {
     private static final String PASSWORD = "somePassword";
     private static final String START_URL = "http://tr.com";
     private static final String WLC_PAGE_TITLE = "Westlaw Signon";
-    private static final String ALERT_MESSAGE = "Your username and/or password do not match our records. Please try again";
+    private static final String ALERT_MESSAGE = "Your username and/or password do not match our records. Please try again.";
 
     TRHomePage loginPage = new TRHomePage();
     TRAllProductPage allProductPage = new TRAllProductPage();
@@ -41,7 +41,7 @@ public class SimpleTest {
     @Test(dependsOnMethods ="goToWL" ,description = "LogIn to PL")
     public void failedLogIn() {
         onePassPage.loginOnePass(LOGIN, PASSWORD);
-        Assert.assertTrue(onePassPage.errorMessage().getText().equalsIgnoreCase(ALERT_MESSAGE), "Error message is not the same");
+        Assert.assertTrue(onePassPage.errorMessage().getText().trim().equalsIgnoreCase(ALERT_MESSAGE), "Error message is not the same");
     }
 
     @AfterClass(description = "Stop Browser")

@@ -20,7 +20,7 @@ public class OnePassPage extends AbstractPage {
         return driver.findElement(By.cssSelector("button#SignIn"));
     }
     public WebElement errorMessage(){
-        return driver.findElement(By.xpath("//*div[@id='errorMessageDialog']/span"));
+        return driver.findElement(By.xpath("//div[@id='errorMessageDialog']/span"));
     }
 
     public void loginOnePass(String login, String password) {
