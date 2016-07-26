@@ -2,7 +2,6 @@ package com.epam.tam.module4.task1.page_object.TR;
 
 import com.epam.tam.module4.task1.page_object.AbstractPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 

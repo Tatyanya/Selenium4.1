@@ -1,10 +1,8 @@
 package com.epam.tam.module4.task1.page_object;
 
-import com.epam.tam.module4.task1.page_object.AbstractPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.concurrent.TimeUnit;
 
 public class OnePassPage extends AbstractPage {
 
@@ -19,8 +17,9 @@ public class OnePassPage extends AbstractPage {
     public WebElement onePassSignInButton() {
         return driver.findElement(By.cssSelector("button#SignIn"));
     }
-    public WebElement errorMessage(){
-        return driver.findElement(By.xpath("//div[@id='errorMessageDialog']/span"));
+
+    public String errorMessage(){
+        return driver.findElement(By.xpath("//div[@id='errorMessageDialog']/span")).getText();
     }
 
     public void loginOnePass(String login, String password) {

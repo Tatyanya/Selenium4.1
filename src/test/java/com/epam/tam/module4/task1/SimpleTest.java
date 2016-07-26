@@ -38,10 +38,10 @@ public class SimpleTest {
         Assert.assertEquals(driver.getTitle(), WLC_PAGE_TITLE, "incorrect title of page");
     }
 
-    @Test(dependsOnMethods ="goToWL" ,description = "LogIn to PL")
+    @Test(dependsOnMethods = "goToWL", description = "LogIn to PL")
     public void failedLogIn() {
         onePassPage.loginOnePass(LOGIN, PASSWORD);
-        Assert.assertTrue(onePassPage.errorMessage().getText().trim().equalsIgnoreCase(ALERT_MESSAGE), "Error message is not the same");
+        Assert.assertTrue(onePassPage.errorMessage().equalsIgnoreCase(ALERT_MESSAGE), "Error message is not the same");
     }
 
     @AfterClass(description = "Stop Browser")
