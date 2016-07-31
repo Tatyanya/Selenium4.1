@@ -7,13 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PlLoginPage extends AbstractPage {
 
-
-    public WebElement onePassButton() {
-        return driver.findElement(By.id("onePassLoginButton"));
-
+    public PlLoginPage() {
+        super();
+        PageFactory.initElements(this.driver, this);
     }
-    public PlLoginPage clickOnePassButton() {
+
+    private WebElement onePassButton() {
+        return driver.findElement(By.id("onePassLoginButton"));
+    }
+
+    public void clickOnePassButton() {
         onePassButton().click();
-        return PageFactory.initElements(driver, PlLoginPage.class);
     }
 }
