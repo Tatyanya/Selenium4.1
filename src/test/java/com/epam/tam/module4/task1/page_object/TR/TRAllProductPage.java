@@ -32,10 +32,11 @@ public class TRAllProductPage extends AbstractPage {
     public void openResourceLink(String arg) {
         resourceLink(arg).click();
         TimeOutUtils.sleepInSeconds(2);
-
-
     }
 
+    public boolean openResourceLinkIsDisplayed(String arg) {
+        return resourceLink(arg).isDisplayed();
+    }
 }
 
 
