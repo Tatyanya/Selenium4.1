@@ -15,7 +15,7 @@ public abstract class AbstractPage {
     protected RemoteWebDriver driver;
 
     public AbstractPage() {
-        this.driver = Browser.getDriver();
+        this.driver = (RemoteWebDriver) Browser.getDriver();
     }
 
     public WebDriver getDriver() {
